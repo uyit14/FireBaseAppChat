@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.uytai.firebaseappchat.StatusActivity">
+
+    <include
+        android:id="@+id/status_toolbar"
+        layout="@layout/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"></include>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/status_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="35dp"
+        android:id="@+id/status_your">
+
+        <EditText
+            android:id="@+id/status_your_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your status" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/status_change_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/status_your"
+        android:layout_below="@+id/status_your"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="11dp"
+        android:background="#ff00"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Save Change" />
+
+</RelativeLayout>
