@@ -34,5 +34,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.theartofdev.edmodo:android-image-cropper:2.5.+'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.firebaseui:firebase-ui-database:2.3.0'
 }
 apply plugin: 'com.google.gms.google-services'
