@@ -17,7 +17,6 @@ public class AllUsersActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private RecyclerView mUsersList;
     private DatabaseReference mUsersDatabase;
-    private TextView userNameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +56,15 @@ public class AllUsersActivity extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int position) {
-                usersViewHolder.setDisplayName(users.getName());
+                usersViewHolder.setName(users.getName());
+                usersViewHolder.setStatus(users.getStatus());
             }
         };
         mUsersList.setAdapter(firebaseRecyclerAdapter);
     }
 
     //
-    public class UsersViewHolder extends RecyclerView.ViewHolder{
+    public static class UsersViewHolder extends RecyclerView.ViewHolder{
 
         View mView;
         public UsersViewHolder(View itemView) {
@@ -72,9 +72,14 @@ public class AllUsersActivity extends AppCompatActivity {
             mView = itemView;
         }
         //
-        public void setDisplayName(String name){
-            userNameView = mView.findViewById(R.id.users_single_name);
+        public void setName(String name){
+            TextView userNameView = mView.findViewById(R.id.users_single_name);
             userNameView.setText(name);
+        }
+        //
+        public void setStatus(String status){
+            TextView userStatus = mView.findViewById(R.id.user_single_status);
+            userStatus.setText(status);
         }
     }
 }

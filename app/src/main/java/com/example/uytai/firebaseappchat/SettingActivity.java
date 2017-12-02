@@ -103,7 +103,7 @@ public class SettingActivity extends AppCompatActivity {
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
                 mName.setText(name);
                 mStatus.setText(status);
-                Picasso.with(SettingActivity.this).load(image).into(mDisplayImage);
+                Picasso.with(SettingActivity.this).load(image).placeholder(R.drawable.avatar).into(mDisplayImage);
             }
 
             @Override
